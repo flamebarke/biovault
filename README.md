@@ -6,9 +6,18 @@ With the two helper scripts in this repo it is possible to read and write an AES
 
 The `vault.py` script is a python wrapper around `hf_i2c_plus_2k_utils` which reads and writes an encrypted CSV file. The CSV file is carved from the hexdump, reversed with xxd and then displayed in the terminal in JSON format.
 
+I would recommend writing data to sector 1 for two reasons:
+
+1.  Sector 0 can still be used to read/write NDEF records.
+2.  Sector 1 is not accessible from Android or IOS without a custom application or a tool to send raw commands.
+
+Even with encrypted data written to sector 1, when the implant is read from a device such as a phone it will still only return the NDEF record in sector 0 (URL, vcard etc). When the encrypted data needs to be accessed just use the proxmark3 to access sector 1 using `vault.py`.
+
+
+
 ### To Do:
 
-- [ ] : The lua script is good. The python script is functional but shit. When I have some time I will refactor it to use pure python not os.system calls so no files are written to disk.
+- [ ] : The lua script is good. The python script is functional but shit. When I have some time I will refactor it to use pure python not os.system calls so no files need to be written/deleted from disk.
 - [ ] : Add support for other data formats and maybe some compression to save space.
 
 
