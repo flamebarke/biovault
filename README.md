@@ -2,7 +2,7 @@
 
 ### About:
 
-With the two helper scripts in this repo it is possible to read and write an AES-256 encrypted file on an NFC implant (specifically the [xSIID](https://dangerousthings.com/product/xsiid/). The `hf_i2c_plus_2k_utils` script can also be used standalone to write arbitrary data to user memory on a sector of your choosing (sector 0 or 1). 
+With the two helper scripts in this repo it is possible to read and write an AES-256 encrypted file on an NFC implant (specifically the [xSIID](https://dangerousthings.com/product/xsiid/)). The `hf_i2c_plus_2k_utils` script can also be used standalone to write arbitrary data to user memory on a sector of your choosing (sector 0 or 1). 
 
 The `vault.py` script is a python wrapper around `hf_i2c_plus_2k_utils` which reads and writes an encrypted CSV file. The CSV file is carved from the hexdump, reversed with xxd and then displayed in the terminal in JSON format.
 
