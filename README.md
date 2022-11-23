@@ -20,9 +20,11 @@ google.com,testuser,Password1
 reddit.com,reddituser,Password2
 ```
 to write the encrypted file to the xSIID:
+
 4.  `python3 vault.py -m w` : write file
 
 to read the encrypted file:
+
 5.  `python3 vault.py -m r` : read passwords
 
 
