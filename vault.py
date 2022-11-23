@@ -70,13 +70,13 @@ args = parser.parse_args()
 
 # Static strings
 zero = f"{pm3_path}pm3 -c \'script run hf_i2c_plus_2k_utils -s 1 -m f -f zero.null\'"
-aes_enc = f"openssl aes-256-cbc -a -salt -pbkdf2 -in vault.txt -out vault.txt.enc"
+aes_enc = f"openssl aes-256-cbc -salt -pbkdf2 -in vault.txt -out vault.txt.enc"
 write_vault = f"{pm3_path}pm3 -c \'script run hf_i2c_plus_2k_utils -s 1 -m f -f vault.txt.enc\'"
 
 dump_vault = f"{pm3_path}pm3 -c \'script run hf_i2c_plus_2k_utils -s 1 -m d\' >/dev/null 2>&1"
 extract = f"/bin/cat {uid}.hex | awk -F \'{pre}\' \'{{print $2}}\' > dump.bin"
 reverse_hex = "xxd -r -ps dump.bin > vault.txt.enc"
-aes_dec = "openssl aes-256-cbc -d -a -pbkdf2 -in vault.txt.enc -out vault.txt.dec"
+aes_dec = "openssl aes-256-cbc -d -pbkdf2 -in vault.txt.enc -out vault.txt.dec"
 display = "csvtojson vault.txt.dec | jq"
 
 
