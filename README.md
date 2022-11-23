@@ -10,6 +10,7 @@ Hardware: proxmark3
 Usage:
 
 1.  move `hf_i2c_plus_2k_utils.lua` to `~/.proxmark3/luascripts/`
+    - this script is now in the [Proxmark3 Iceman fork](https://github.com/RfidResearchGroup/proxmark3) so you can just do a `git pull` to grab the latest version
 2.  install jq and csvtojson : `brew install jq ; npm -g install csvtojson`
 3.  create a csv file in the following format and save it as vault.txt in the same folder as vault.py:
 
