@@ -41,15 +41,15 @@ d,u,p
 google.com,testuser,Password1
 reddit.com,reddituser,Password2
 ```
-to write the encrypted file to the xSIID:
+- Write the encrypted file to the xSIID:
 
 4.  `python3 biovault.py -m w`
 
-to zero sector 1 with null bytes and then write the encrypted file to the xSIID:
+- Zero sector 1 with null bytes and then write the encrypted file to the xSIID:
 
 5.  `python3 biovault.py -m w -z`
 
-to read the encrypted file:
+- Dump, carve, decrypt and read the stored file:
 
 6.  `python3 biovault.py -m r` 
 
