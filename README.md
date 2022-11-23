@@ -1,5 +1,17 @@
 ![Biovault](/biovault.png)
 
+### About:
+
+With the two helper scripts in this repo it is possible read and write an AES-256 encrypted file on an NFC implant (specifically the [xSIID](https://dangerousthings.com/product/xsiid/). The `hf_i2c_plus_2k_utils` script can also be used standalone to write arbitrary data to user memory on a sector of your choosing (sector 1 or 2). 
+
+The `vault.py` script is a python wrapper around `hf_i2c_plus_2k_utils` which reads and writes an encrypted CSV file. The CSV file is carved from the hexdump, reversed with xxd and then displayed in the terminal in JSON format.
+
+### To Do:
+
+- [ ] : The lua script is good. The python script is functional but shit. When I have some time I will refactor it to use pure python not os.system calls so no files are written to disk.
+- [ ] : Add support for other data formats and maybe some compression to save space.
+
+
 ### Requirements:
 
 
@@ -29,7 +41,10 @@ to read the encrypted file:
 5.  `python3 vault.py -m r` : read passwords
 
 
-#### Note: you will need to modify variables `pm3_path` and `uid` in vault.py (lines 13,14) to reflect the path to the pm3 binary and your implants UID. If you already have data on sector 1, use the -z flag to zero out the user memory of sector 1 with NULL bytes.
+*Note:* 
+
+*You will need to modify variables `pm3_path` and `uid` in vault.py (lines 13,14) to reflect the path to the pm3 binary and your implants UID.* 
+*If you already have data on sector 1, use the -z flag to zero out the user memory of sector 1 with NULL bytes.*
 
 ### Demo:
 
