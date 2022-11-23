@@ -43,11 +43,15 @@ reddit.com,reddituser,Password2
 ```
 to write the encrypted file to the xSIID:
 
-4.  `python3 vault.py -m w` : write file
+4.  `python3 biovault.py -m w`
+
+to zero sector 1 with null bytes and then write the encrypted file to the xSIID:
+
+5.  `python3 biovault.py -m w -z`
 
 to read the encrypted file:
 
-5.  `python3 vault.py -m r` : read passwords
+6.  `python3 biovault.py -m r` 
 
 
 *Note:* 
