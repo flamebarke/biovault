@@ -30,3 +30,7 @@ to read the encrypted file:
 
 
 #### Note: you will need to modify variables `pm3_path` and `uid` in vault.py (lines 13,14) to reflect the path to the pm3 binary and your implants UID. If you already have data on sector 1, use the -z flag to zero out the user memory of sector 1 with NULL bytes.
+
+### Demo:
+
+![xSIID Vault](/demo.png)
