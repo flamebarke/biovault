@@ -114,7 +114,7 @@ def wait():
     loader = Loader("[+] Place proxmark on implant .. sleeping for 10").start()
     sleep(10)
     loader.stop()
-    print("[+] Done ...")
+    print("[+] Reading data ...")
 
 
 def main():
