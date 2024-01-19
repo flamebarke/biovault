@@ -120,13 +120,17 @@ def wait():
 def main():
     try:
         if args.mode == 'r':
+            tag_path = ("./" + uid + ".hex")
             wait()
             os.system(dump_vault)
-            os.system(extract)
-            os.system(reverse_hex)
-            proc(aes_dec)
-            os.system(display)
-            clean()
+            if os.path.exists(tag_path):
+                os.system(extract)
+                os.system(reverse_hex)
+                proc(aes_dec)
+                os.system(display)
+                clean()
+            else:
+                print("[!] Cannot read tag")
         elif args.mode == 'w':
             if args.zero:
                 wait()
